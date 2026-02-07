@@ -15,7 +15,7 @@
 ## 📥 Accesos Rápidos (Entregables)
 Si quieres ir directo al grano, aquí tienes los documentos finales del proyecto:
 * 📄 **[Ver Informe Ejecutivo (PDF)](04_deliverables/Greenpeace_Executive_Summary.pdf)** - *El reporte presentado a cliente.*
-* 📄 **[Ver Informe Técnico (PDF)](04_deliverables/Technical_Report.pdf)** - *Metodología detallada.*
+* 📄 **[Ver Informe Técnico (PDF)](04_deliverables/Documentacion_tecnica.pdf)** - *Metodología detallada.*
 * 📓 **[Ver Diccionario de Datos](02_data_modeling/data_dictionary.md)** - *Explicación de las 53 tablas del modelo.*
 
 ---
