@@ -14,8 +14,8 @@
 
 ## 📥 Accesos Rápidos (Entregables)
 Si quieres ir directo al grano, aquí tienes los documentos finales del proyecto:
-* 📄 **[Ver Informe Ejecutivo (PDF)](04_deliverables/Greenpeace_Executive_Summary.pdf)** - *El reporte presentado a cliente.*
-* 📄 **[Ver Informe Técnico (PDF)](04_deliverables/Documentacion_tecnica.pdf)** - *Metodología detallada.*
+* 📄 **[Ver Informe Ejecutivo (PDF)](04_deliverables/%20Informe_Incendios_Greenpeace.pdf)** - *El reporte presentado a cliente.*
+* 📄 **[Ver Documentación Técnica (PDF)](04_deliverables/Documentacion_tecnica.pdf)** - *Metodología detallada.*
 * 📓 **[Ver Diccionario de Datos](02_data_modeling/data_dictionary.md)** - *Explicación de las 53 tablas del modelo.*
 
 ---
@@ -69,7 +69,7 @@ El análisis multivariable ha generado un "retrato robot" de los incendios más 
 * **Quién:** El 57% de la superficie quemada es **Propiedad Privada** sin gestión.
 * **Qué arde:** El *Eucalyptus globulus* (cultivo industrial) arde masivamente en zonas sin protección, mientras que el *Quercus* (Roble) actúa como freno natural.
 
-![Especies](assets/map_visual.png)
+*(Visualización de especies disponible en el Dashboard)*
 
 ### 3. La Factura Económica
 Existe un desequilibrio estructural en la inversión pública:
@@ -100,13 +100,12 @@ Tras el cierre de la fase académica (MVP), el proyecto continúa en desarrollo 
 📁 Spain-Wildfires-Greenpeace-Analytics
 │
 ├── 📂 01_ingestion_scripts/    # Scripts de extracción (Python/Selenium)
-├── 📂 02_data_modeling/        # Documentación del modelo de datos y esquema
+├── 📂 02_data_modeling/        # Modelo de datos, Diccionario y Esquema
 ├── 📂 03_dashboard/            # Archivo maestro (.pbix)
 ├── 📂 04_deliverables/         # Informes PDF para cliente
 └── 📂 assets/                  # Imágenes y recursos gráficos
-```
 ---
-
+```
 ## 👤 Partner
 * Greenpeace
 
