@@ -1,4 +1,4 @@
-# 🔥 España en Llamas: Auditoría Integral de Incendios Forestales (2005-2025)
+# 🔥 Incendios Forestales: Una Emergencia Nacional (2005-2025)
 
 ### 🚑 PROYECTO DE INTELIGENCIA DE DATOS EN COLABORACIÓN CON GREENPEACE
 **Una auditoría técnica para apoyar la estrategia de defensa forestal de la ONG.**
