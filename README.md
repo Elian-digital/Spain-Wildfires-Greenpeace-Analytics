@@ -28,6 +28,12 @@ La tendencia de los últimos 20 años es positiva. El número total de incendios
 
 Somos muy buenos apagando fuegos pequeños.
 
+![20 años de incendios](03_dashboard/screenshots/01.png)
+
+![Lo que hacemos bien - medios](03_dashboard/screenshots/08.png)
+
+![Descenso de conatos](03_dashboard/screenshots/09.png)
+
 ---
 
 ### El giro: el 95% no son accidentes
@@ -35,6 +41,28 @@ Somos muy buenos apagando fuegos pequeños.
 Solo un **5% de los incendios tienen causa natural** (rayo). El resto son provocados — intencionados, prácticas agrícolas y ganaderas, conflictos sociales. Y los intencionados no son solo los más frecuentes: son los más devastadores con diferencia.
 
 **La intención es lo que cuenta.**
+
+![El origen del fuego](03_dashboard/screenshots/02.png)
+
+![Intencionado: más común y más devastador](03_dashboard/screenshots/03.png)
+
+![Motivaciones](03_dashboard/screenshots/04.png)
+
+---
+
+### Dónde ocurre: tres perfiles de provincia
+
+No todas las provincias arden igual. El análisis geográfico revela tres patrones distintos de riesgo con implicaciones estratégicas diferentes para la distribución de recursos.
+
+![Recurrentes habituales por provincia](03_dashboard/screenshots/06.png)
+
+---
+
+### El valor de lo que perdemos
+
+El 66,5% de la superficie quemada no es arbolada — matorral, pastizal, monte bajo. La pérdida financiera de madera es cuantificable. La pérdida ecológica, no. Y los datos muestran que el **valor ecológico supera sistemáticamente las pérdidas comerciales**.
+
+![El valor de lo que perdemos](03_dashboard/screenshots/07.png)
 
 ---
 
@@ -46,6 +74,12 @@ Al extinguir eficientemente los fuegos pequeños, permitimos que la biomasa se a
 
 **2025: 355.000 hectáreas quemadas. El peor año desde que hay registros.**
 
+![Cuando no lo hacemos bien](03_dashboard/screenshots/10.png)
+
+![Los grandes incendios forestales](03_dashboard/screenshots/11.png)
+
+![España lidera el ranking de destrucción en la UE](03_dashboard/screenshots/12.png)
+
 ---
 
 ### Anatomía del desastre
@@ -55,6 +89,8 @@ El análisis multivariable de los **Top 15 peores incendios** revela un patrón 
 - **Dónde arden:** Zonas No Protegidas (ZNP) con densidad forestal del 70%. El **57,8% es propiedad privada** sin gestión activa.
 - **Por qué:** El 55,7% de los grandes incendios son **intencionados**. Las motivaciones dominantes: venganzas, conflictos sociales, prácticas ganaderas. No son accidentes, son crímenes con raíz cultural.
 - **Qué arde:** El *Eucalyptus globulus* (cultivo industrial) arde masivamente en zonas sin protección. El *Quercus* actúa como freno natural.
+
+![Anatomía del desastre](03_dashboard/screenshots/13.png)
 
 ---
 
@@ -90,26 +126,3 @@ Modelo centrado en `Fact_Pif` (Parte de Incendio Forestal), optimizado para filt
 ---
 
 ## Estructura del repositorio
-
-## 📂 Estructura del Repositorio
-
-```text
-📁 Spain-Wildfires-Greenpeace-Analytics
-│
-├── 📂 01_ingestion_scripts/    # Scripts de extracción (Python/Selenium)
-├── 📂 02_data_modeling/        # Modelo de datos, Diccionario y Esquema
-├── 📂 03_dashboard/            # Archivo maestro (.pbix)
-├── 📂 04_deliverables/         # Informes PDF para cliente
-└── 📂 assets/                  # Imágenes y recursos gráficos
-
-```
---- 
-
-*Datos: Estadística General de Incendios Forestales (EGIF) — MITECO. Las conclusiones representan el análisis técnico del autor y no necesariamente la postura oficial de Greenpeace.*
-
----
-
-### Contacto
-- **LinkedIn:** [linkedin.com/in/eliandaghoum](https://www.linkedin.com/in/eliandaghoum/)
-- **Email:** eliandaghoum@gmail.com
-- **GitHub:** [@Elian-digital](https://github.com/Elian-digital)
