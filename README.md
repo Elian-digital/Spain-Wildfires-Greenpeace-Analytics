@@ -1,98 +1,95 @@
-# 🔥 Incendios Forestales: Una Emergencia Nacional (2005-2025)
+# 🔥 Incendios Forestales en España: Una Emergencia Nacional (2005–2025)
 
-### 🚑 PROYECTO DE INTELIGENCIA DE DATOS EN COLABORACIÓN CON GREENPEACE
-**Una auditoría técnica para apoyar la estrategia de defensa forestal de la ONG.**
+> *Durante el tiempo que tardes en leer esto, arderán varias hectáreas de monte.*
 
-![Status](https://img.shields.io/badge/Status-Completed-success) ![Python](https://img.shields.io/badge/Python-3.10%2B-blue) ![PowerBI](https://img.shields.io/badge/PowerBI-Desktop-yellow) ![Data](https://img.shields.io/badge/Data-MITECO-green) ![Academic Status](https://img.shields.io/badge/IT_Academy-Completed_✅-success)
-![Client Status](https://img.shields.io/badge/Greenpeace_Collab-Ongoing_🚀-orange)
+Colaboración con **Greenpeace España** · IT Academy Barcelona · Python + Power BI · Datos MITECO
 
-> **"Un análisis End-to-End sobre la anatomía del desastre: Desde la extracción de datos ocultos en la administración pública hasta la visualización de 3.400 millones de euros en pérdidas."**
+![Status](https://img.shields.io/badge/Bootcamp-10%2F10-success) ![Status](https://img.shields.io/badge/Greenpeace_Collab-Ongoing-orange)
 
 ![Portada](assets/cover_project.png)
 
----
-
-## 📥 Accesos Rápidos (Entregables)
-Si quieres ir directo al grano, aquí tienes los documentos finales del proyecto:
-* 📄 **[Ver Informe Ejecutivo (PDF)](04_deliverables/%20Informe_Incendios_Greenpeace.pdf)** - *El reporte presentado a cliente.*
-* 📄 **[Ver Documentación Técnica (PDF)](04_deliverables/Documentacion_tecnica.pdf)** - *Metodología detallada.*
-* 📓 **[Ver Diccionario de Datos](02_data_modeling/data_dictionary.md)** - *Explicación de las 53 tablas del modelo.*
+📄 [Ver Informe Ejecutivo (PDF)](04_deliverables/%20Informe_Incendios_Greenpeace.pdf) · 📄 [Documentación Técnica](04_deliverables/Documentacion_tecnica.pdf) · 📓 [Diccionario de Datos](02_data_modeling/data_dictionary.md)
 
 ---
 
-## 📋 Resumen Ejecutivo
-España se enfrenta a una paradoja operativa: **tenemos el mejor sistema de extinción de Europa, pero sufrimos los incendios más devastadores.**
+## El encargo
 
-Este proyecto no es solo un dashboard; es una investigación de ingeniería de datos que procesa **221.839 expedientes oficiales** para desmentir mitos. A través de un pipeline ETL propio, se ha estructurado la información histórica del Ministerio para la Transición Ecológica (MITECO) para demostrar que el problema no es solo el clima, sino la gestión del territorio (abandono rural y monocultivos).
+Greenpeace España necesitaba evidenciar con datos duros que el modelo actual de gestión forestal es insuficiente. El problema: los datos históricos del Ministerio (MITECO) estaban enterrados en archivos XML sin API de descarga directa, dispersos en 20 años de registros.
 
-## 🤝 Contexto del Cliente (Stakeholder)
-Este proyecto nace de una colaboración con **Greenpeace España** para dar respuesta a preguntas críticas sobre la eficacia de la inversión pública en incendios.
-
-* **El Reto:** La organización necesitaba evidenciar con datos duros que el modelo de extinción actual es insuficiente sin gestión forestal.
-* **La Solución:** Un dashboard interactivo que permite a los técnicos de la ONG cruzar variables de propiedad, costes y biodiversidad para sus campañas de concienciación.
-
-### 🎯 Las Grandes Cifras
-* **Volumen:** 221.839 Siniestros analizados.
-* **Complejidad:** Modelo en Estrella (Snowflake) con 53 tablas y 264 variables.
-* **Impacto:** Análisis de pérdidas estimadas en **3.443 Millones de €** (2025).
+Desarrollé un pipeline ETL completo con Python/Selenium para extraer **221.839 expedientes oficiales**, construí un modelo Snowflake de 53 tablas y 264 variables en Power BI, y entregué un dashboard + informe técnico que Greenpeace puede usar en sus campañas.
 
 ---
 
-## 🛠️ Arquitectura Técnica
+## La historia que cuentan los datos
 
-### 1. Ingeniería de Datos (Python & Scraping)
-El portal oficial EGIF presentaba limitaciones de acceso (archivos XML ocultos y paginación compleja). Se desarrolló una solución de **Ingeniería Inversa**:
-* **Extracción (`01_ingestion_scripts/`):** Script en Python (`Selenium` + `Requests`) que inyecta parámetros en el DOM para forzar la descarga masiva de datos (~62MB por año).
-* **Parsing:** Procesamiento iterativo (`ET.iterparse`) para transformar XMLs complejos anidados en DataFrames planos sin saturar la memoria.
-* **Normalización:** Estandarización de IDs geográficos y meteorológicos de 20 años de histórico.
+### Lo bueno: vamos mejorando
 
-### 2. Modelado de Datos (Power BI)
-Se diseñó un **Esquema en Copo de Nieve (Snowflake Schema)** centrado en la tabla de hechos `Fact_Pif` (Parte de Incendio Forestal), optimizando el rendimiento para filtrar un cuarto de millón de registros en tiempo real.
+La tendencia de los últimos 20 años es positiva. El número total de incendios desciende año tras año — de 7.328 en 2005 a ~2.600 en 2025. Las campañas de concienciación funcionan. Las brigadas llegan en **29 minutos de media**. El 98% de los conatos (incendios menores de 1 hectárea) se extinguen antes de crecer.
+
+Somos muy buenos apagando fuegos pequeños.
+
+---
+
+### El giro: el 95% no son accidentes
+
+Solo un **5% de los incendios tienen causa natural** (rayo). El resto son provocados — intencionados, prácticas agrícolas y ganaderas, conflictos sociales. Y los intencionados no son solo los más frecuentes: son los más devastadores con diferencia.
+
+**La intención es lo que cuenta.**
+
+---
+
+### Cuando no lo hacemos bien: el monstruo
+
+Aquí está la paradoja: mientras los incendios pequeños bajan, los Grandes Incendios Forestales (+500 ha) van en aumento. Tenemos menos incendios que nunca, pero la superficie quemada se dispara.
+
+Al extinguir eficientemente los fuegos pequeños, permitimos que la biomasa se acumule. Cuando un incendio escapa al control, encuentra un monte cargado de combustible. El resultado es un monstruo imparable.
+
+**2025: 355.000 hectáreas quemadas. El peor año desde que hay registros.**
+
+---
+
+### Anatomía del desastre
+
+El análisis multivariable de los **Top 15 peores incendios** revela un patrón claro:
+
+- **Dónde arden:** Zonas No Protegidas (ZNP) con densidad forestal del 70%. El **57,8% es propiedad privada** sin gestión activa.
+- **Por qué:** El 55,7% de los grandes incendios son **intencionados**. Las motivaciones dominantes: venganzas, conflictos sociales, prácticas ganaderas. No son accidentes, son crímenes con raíz cultural.
+- **Qué arde:** El *Eucalyptus globulus* (cultivo industrial) arde masivamente en zonas sin protección. El *Quercus* actúa como freno natural.
+
+---
+
+### La factura
+
+| | |
+|---|---|
+| Pérdidas estimadas 2025 | **3.443 millones €** |
+| Coste medio por hectárea | 9.705 € |
+| Inversión en extinción | 108 M€ |
+| Inversión en prevención | 26 M€ |
+
+El desequilibrio es estructural: gastamos 4 veces más en apagar que en evitar. Y aun así, cuando el monstruo aparece, no podemos con él.
+
+---
+
+## Arquitectura técnica
+
+### Ingeniería de Datos (Python)
+El portal EGIF no tiene API. Los datos están en XMLs paginados con acceso restringido. Desarrollé ingeniería inversa con **Selenium + Requests** para inyectar parámetros en el DOM y forzar la descarga masiva (~62MB por año durante 20 años).
+
+- **Parsing:** `ET.iterparse` para procesar XMLs anidados sin saturar memoria
+- **Normalización:** estandarización de IDs geográficos y meteorológicos a lo largo de 20 años de histórico
+
+### Modelado en Power BI (Snowflake Schema)
+Modelo centrado en `Fact_Pif` (Parte de Incendio Forestal), optimizado para filtrar 221K registros en tiempo real.
+
+- **Facts:** `Fact_Operativa` (tiempos), `Fact_Territorio` (impacto ecológico), `Fact_Economia` (costes)
+- **Dimensions:** 49 tablas normalizadas (taxonomía, causas, geografía, medios)
 
 ![Esquema de Datos](02_data_modeling/star_schema.png)
 
-* **Facts:** `Fact_Operativa` (Tiempos), `Fact_Territorio` (Impacto ecológico), `Fact_Economia` (Costes).
-* **Dimensions:** 49 tablas dimensionales normalizadas (Taxonomía, Causas, Geografía, Medios).
-* **[👉 Ver el Diccionario de Datos completo aquí](02_data_modeling/data_dictionary.md)**
-
 ---
 
-## 🚀 Insights Clave (Resultados del Análisis)
-
-### 1. La Paradoja de la Extinción
-Los datos revelan que somos víctimas de nuestro propio éxito. El sistema apaga el **98% de los conatos** (<1 ha) en tiempos récord (llegada media de brigadas: 29 min).
-> *Conclusión:* Al eliminar el fuego pequeño, permitimos que la biomasa se acumule. Cuando un incendio escapa al control, encuentra un monte cargado de combustible, convirtiéndose en un Gran Incendio Forestal (GIF) imparable.
-
-### 2. El Perfil del "Monstruo"
-El análisis multivariable ha generado un "retrato robot" de los incendios más devastadores (Top 15):
-* **Dónde:** Zonas No Protegidas (ZNP) con una densidad forestal crítica del 70%.
-* **Quién:** El 57% de la superficie quemada es **Propiedad Privada** sin gestión.
-* **Qué arde:** El *Eucalyptus globulus* (cultivo industrial) arde masivamente en zonas sin protección, mientras que el *Quercus* (Roble) actúa como freno natural.
-
-*(Visualización de especies disponible en el Dashboard)*
-
-### 3. La Factura Económica
-Existe un desequilibrio estructural en la inversión pública:
-* Se destinan **108 Millones € a Extinción** (reacción).
-* Solo **26 Millones € a Prevención** (gestión).
-* **Resultado:** Pérdidas anuales millonarias en valor ecológico y madera.
-
-### 4. La Raíz Cultural (Causas)
-Solo el **5%** de los incendios son naturales (rayos). El 55,7% de los grandes incendios son **Intencionados**, motivados principalmente por:
-* Venganzas y conflictos sociales.
-* Prácticas agrícolas y ganaderas tradicionales (quemas de pastos).
-
----
-
-## 🔮 Roadmap & Next Steps (Fase 2)
-Tras el cierre de la fase académica (MVP), el proyecto continúa en desarrollo activo junto al equipo de Greenpeace para su implementación real.
-
-**Hitos en curso:**
-
-* [ ] **Escalabilidad:** Migración del modelo local a Power BI Service / Azure para acceso multi-usuario en la ONG.
-* [ ] **Granularidad:** Profundización del análisis a nivel municipal para las zonas de alto riesgo (ZNP).
-
----
+## Estructura del repositorio
 
 ## 📂 Estructura del Repositorio
 
@@ -104,20 +101,15 @@ Tras el cierre de la fase académica (MVP), el proyecto continúa en desarrollo 
 ├── 📂 03_dashboard/            # Archivo maestro (.pbix)
 ├── 📂 04_deliverables/         # Informes PDF para cliente
 └── 📂 assets/                  # Imágenes y recursos gráficos
----
+
 ```
-## 👤 Partner
-* Greenpeace
+--- 
 
-## 👤 Autor
-
-**Elian Daghoum**
-* *Data Analyst & Visualization Expert*
-* Proyecto tutorizado por: Yunier Cordova (IT Academy)
-* **Contacto:** [Tu LinkedIn] | [Tu Email]
+*Datos: Estadística General de Incendios Forestales (EGIF) — MITECO. Las conclusiones representan el análisis técnico del autor y no necesariamente la postura oficial de Greenpeace.*
 
 ---
-*Fuente de datos: Estadística General de Incendios Forestales (EGIF) - Ministerio para la Transición Ecológica (MITECO).*
 
-*"Aviso: Este análisis ha sido realizado como proyecto final de Data Analytics en colaboración con Greenpeace. Las conclusiones y visualizaciones representan el análisis técnico del autor basado en datos oficiales y no necesariamente la postura oficial completa de la organización."*
-](https://github.com/Elian-digital/Spain-Wildfires-Greenpeace-Analytics)
+### Contacto
+- **LinkedIn:** [linkedin.com/in/eliandaghoum](https://www.linkedin.com/in/eliandaghoum/)
+- **Email:** eliandaghoum@gmail.com
+- **GitHub:** [@Elian-digital](https://github.com/Elian-digital)
